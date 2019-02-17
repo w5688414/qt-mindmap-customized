@@ -19,11 +19,11 @@ public:
 
     void mousePressEvent(QMouseEvent* ev) Q_DECL_OVERRIDE
     {
-        if (isReadOnly())
-        {
-            ev->ignore();
-            return;
-        }
+//        if (isReadOnly())
+//        {
+//            ev->ignore();
+//            return;
+//        }
 
         QPlainTextEdit::mousePressEvent(ev);
     }
@@ -73,7 +73,7 @@ public:
     void focusOutEvent(QFocusEvent *) Q_DECL_OVERRIDE
     {
         setReadOnly(true);
-        m_parent->OnTextareaFocusChange(false);
+        m_parent->OnTextareaFocusChange(true);
     }
 
 };
